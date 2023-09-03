@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smp_Stream.Desktop", "Smp_Stream\Smp_Stream.Desktop.csproj", "{2F137946-D311-46FE-921F-9C1FAD45ECD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smp_Stream.Desktop", "Smp_Stream.Desktop\Smp_Stream.Desktop.csproj", "{2F137946-D311-46FE-921F-9C1FAD45ECD4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smp_Stream.Mobile.Android", "Smp_Stream.Mobile\Smp_Stream.Mobile.Android\Smp_Stream.Mobile.Android.csproj", "{C418B0D5-BD0E-4458-86E9-72560813FAB4}"
 EndProject
