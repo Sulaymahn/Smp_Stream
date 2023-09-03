@@ -59,7 +59,7 @@
                     Grid.Row="2"
                     Text="Clear"
                     CornerRadius="16"
-                    Command="{Binding ClearCommand}" />
+                    Command="{Binding ClearCommand}"/>
         </Grid>
     </Grid>
 

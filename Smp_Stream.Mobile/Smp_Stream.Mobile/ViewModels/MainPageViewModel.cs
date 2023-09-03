@@ -19,7 +19,15 @@ namespace Smp_Stream.Mobile.ViewModels
 {
     internal class MainPageViewModel : INotifyPropertyChanged
     {
+        private string _text;
         private string _letter;
+        private string _rawdata;
+        readonly List<byte> bytes = new List<byte>();
+        readonly ICodec codec = new UnghostCodec(0x5555);
+        private Color _listenBGColor;
+        private TcpListener _listener;
+        private event EventHandler<int> ByteRecieved;
+
         public string LastRecievedLetter
         {
             get => _letter;
@@ -33,7 +41,6 @@ namespace Smp_Stream.Mobile.ViewModels
             }
         }
 
-        private string _text;
         public string Text
         {
             get => _text;
@@ -47,7 +54,6 @@ namespace Smp_Stream.Mobile.ViewModels
             }
         }
 
-        private string _rawdata;
         public string RawData
         {
             get => _rawdata;
@@ -61,7 +67,6 @@ namespace Smp_Stream.Mobile.ViewModels
             }
         }
 
-        private Color _listenBGColor;
         public Color ListenBGColor
         {
             get => _listenBGColor;
@@ -76,12 +81,9 @@ namespace Smp_Stream.Mobile.ViewModels
         }
 
         public string IP { get => GetLocalIpAddress(); }
-
         public ICommand ClearCommand { get; set; }
         public ICommand ListenCommand { get; set; }
 
-        public event EventHandler<int> ByteRecieved;
-        private TcpListener _listener;
 
         public MainPageViewModel()
         {
@@ -112,9 +114,6 @@ namespace Smp_Stream.Mobile.ViewModels
             LastRecievedLetter = string.Empty;
             bytes.Clear();
         }
-
-        readonly List<byte> bytes = new List<byte>();
-        readonly ICodec codec = new UnghostCodec(0x5555);
 
         public async Task ListenAsync()
         {
