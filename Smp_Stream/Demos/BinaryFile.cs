@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Stream = Smp_Stream.Shared.Abstractions.Stream;
 
-namespace Smp_Stream.Demos
+namespace Smp_Stream.Desktop.Demos
 {
     public class BinaryFile : Stream
     {

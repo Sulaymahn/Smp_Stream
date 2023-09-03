@@ -1,6 +1,6 @@
-﻿using Smp_Stream.Demos;
+﻿using Smp_Stream.Desktop.Demos;
 
-namespace Smp_Stream
+namespace Smp_Stream.Desktop
 {
     internal class Program
     {

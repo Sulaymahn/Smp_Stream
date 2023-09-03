@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Stream = Smp_Stream.Shared.Abstractions.Stream;
 
-namespace Smp_Stream.Demos
+namespace Smp_Stream.Desktop.Demos
 {
     public class TextFile : Stream
     {
@@ -23,9 +23,10 @@ namespace Smp_Stream.Demos
         }
 
         public override int ReadByte() =>
-            BaseStream.ReadByte(); 
+            BaseStream.ReadByte();
 
-        public TextFile(string filename) : base(filename) {
+        public TextFile(string filename) : base(filename)
+        {
             BaseStream.Close();
         }
     }
