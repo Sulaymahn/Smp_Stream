@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Smp_Stream.Mobile.ViewModels"
+             x:Class="Smp_Stream.Mobile.Pages.MainPage">
+    <ContentPage.BindingContext>
+        <vm:MainPageViewModel />
+    </ContentPage.BindingContext>
+    <Grid RowDefinitions="100, *">
+        <Frame BackgroundColor="#2196F3"
+               Padding="24"
+               CornerRadius="0">
+            <Label Text="Unghost file client"
+                   HorizontalTextAlignment="Center"
+                   TextColor="White"
+                   FontSize="36" />
+        </Frame>
+        <Grid Grid.Row="1"
+              Margin="20"
+              RowDefinitions="*, *, 100"
+              ColumnDefinitions="*, *">
+            <Frame Grid.Row="0"
+                   BackgroundColor="#3111"
+                   CornerRadius="16"
+                   Grid.ColumnSpan="2">
+                <StackLayout Grid.Row="1">
+                    <Label FontSize="Caption"
+                           HorizontalTextAlignment="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="IP address: " />
+                                <Span Text="{Binding IP}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <ScrollView>
+                        <Label Text="{Binding RawData}" />
+                    </ScrollView>
+                </StackLayout>
+            </Frame>
+            <Frame Grid.Row="1"
+                   BackgroundColor="#3111"
+                   CornerRadius="16"
+                   Grid.ColumnSpan="2">
+                <StackLayout>
+                    <Label Text="Decoded:" />
+                    <ScrollView>
+                        <Label Text="{Binding Text}" />
+                    </ScrollView>
+                </StackLayout>
+            </Frame>
+            <Button Grid.Column="0"
+                    Grid.Row="2"
+                    Text="Listen"
+                    CornerRadius="16"
+                    BackgroundColor="{Binding ListenBGColor}"
+                    Command="{Binding ListenCommand}" />
+            <Button Grid.Column="1"
+                    Grid.Row="2"
+                    Text="Clear"
+                    CornerRadius="16"
+                    Command="{Binding ClearCommand}" />
+        </Grid>
+    </Grid>
+
+</ContentPage>
